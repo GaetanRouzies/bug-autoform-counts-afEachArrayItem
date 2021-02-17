@@ -1,0 +1,19 @@
+<head>
+  <title>bug-autoform-counts-afEachArrayItem</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+  {{> hello}}
+</body>
+
+<template name="hello">
+  {{#autoForm id="insert-config-form" schema=mySchema type="insert"}}
+  {{#afEachArrayItem name="myArray"}}
+  <div>
+    <button type="button" class="autoform-add-item" data-autoform-field="myArray">+</button>
+    <span>index: {{index}}, minCount:{{minCount}}, maxCount:{{maxCount}}</span>
+  </div>
+  {{/afEachArrayItem}}
+  {{/autoForm}}
+</template>
